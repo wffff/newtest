@@ -1,0 +1,8 @@
+<jboss-web>
+
+
+    <!-- For context -->
+    <context-root>/</context-root>
+
+
+</jboss-web>

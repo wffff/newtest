@@ -26,7 +26,7 @@
     </tr>
 
     <tr>
-      <th><a href="/deleteStudentForm.jsp">删除学生</a></th>
+      <th><a href="/deleteStudentForm.jsp">删除学生按ID</a></th>
       <th><a href="/deleteclassroomForm.jsp">删除班级</a></th>
     </tr>
 

@@ -35,6 +35,6 @@ for(int i=0;i<list.size();i++){
 }%>
 
   </table>
-  <a href="index.jsp">返回</a>
+  <a href="index.jsp">返回测试</a>
   </body>
 </html>

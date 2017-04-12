@@ -7,10 +7,7 @@ apply plugin: 'war'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
-    maven {
-        url "http://repo.mycompany.com/maven2" //远程库地址
-    }
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 }
 
 dependencies {

@@ -8,6 +8,7 @@ import java.util.List;
  * Created by Administrator on 2017/4/7.
  */
 public interface ClassDAO {
+
     public List<Classroom> findall();
     public boolean addClass(int id,String classname);
     public Classroom findByID(int id);

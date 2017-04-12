@@ -6,8 +6,11 @@ import java.util.List;
 
 /**
  * Created by Administrator on 2 jhbhjk017/4/7.
+ * Created by Administrator on 2017/    llkk4/7.
  */
 public interface ClassDAO {
+
+
 
     public List<Classroom> findall();
     public boolean addClass(int id,String classname);

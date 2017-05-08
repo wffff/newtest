@@ -1,9 +1,9 @@
-package com.gogo.demo.dao.impl;
+package com.gogo.demo.service.impl;
 
+import com.gogo.demo.beans.Student;
 import com.gogo.demo.common.DBUtils;
 import com.gogo.demo.common.JDBCOperation;
-import com.gogo.demo.dao.StudentDAO;
-import com.gogo.demo.dao.beans.Student;
+import com.gogo.demo.service.IStudentService;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 /**
  * Created by Administrator on 2017/4/7.
  */
-public class StudentDAOImpl implements StudentDAO {
+public class StudentService implements IStudentService {
 
     Connection conn = null;
     PreparedStatement pre = null;

@@ -1,12 +1,10 @@
 package com.gogo.demo.controller;
 
-import com.gogo.demo.dao.beans.Classroom;
-import com.gogo.demo.dao.beans.Student;
-import com.gogo.demo.service.ClassService;
-import com.gogo.demo.service.StudentService;
-import com.gogo.demo.service.impl.ClassServiceImpl;
-import com.gogo.demo.service.impl.StudentServiceImpl;
-import org.springframework.cglib.core.ClassesKey;
+import com.gogo.demo.beans.Student;
+import com.gogo.demo.biz.IClassBiz;
+import com.gogo.demo.biz.IStudentBiz;
+import com.gogo.demo.biz.impl.ClassBiz;
+import com.gogo.demo.biz.impl.StudentBiz;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,14 +20,14 @@ import java.util.List;
  */
 @RestController
 public class ShowAll extends HttpServlet {
-    private StudentService ss;
+    private IStudentBiz ss;
 
     @Override
     @RequestMapping("/showall")
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ss=new StudentServiceImpl();
+        ss=new StudentBiz();
         List<Student> list= ss.findAll();
-    ClassService cs=new ClassServiceImpl();
+    IClassBiz cs=new ClassBiz();
     for(int i=0;i<list.size();i++){
         list.get(i).setClassname(cs.findByID(list.get(i).getClass_id()).getClassname());
     }

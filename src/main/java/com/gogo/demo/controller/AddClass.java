@@ -1,9 +1,7 @@
 package com.gogo.demo.controller;
 
-import com.gogo.demo.service.ClassService;
-import com.gogo.demo.service.StudentService;
-import com.gogo.demo.service.impl.ClassServiceImpl;
-import com.gogo.demo.service.impl.StudentServiceImpl;
+import com.gogo.demo.biz.IClassBiz;
+import com.gogo.demo.biz.impl.ClassBiz;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +16,7 @@ import java.io.IOException;
  */
 @RestController
 public class AddClass extends HttpServlet{
-    private ClassService cs;
+    private IClassBiz cs;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -28,7 +26,7 @@ public class AddClass extends HttpServlet{
     @Override
     @RequestMapping("/addclass")
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        cs=new ClassServiceImpl();
+        cs=new ClassBiz();
    String _id=req.getParameter("classid").trim();
    String classname=req.getParameter("classname").trim();
    int id=Integer.valueOf(_id);

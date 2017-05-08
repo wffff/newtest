@@ -1,7 +1,7 @@
 package com.gogo.demo.controller;
 
-import com.gogo.demo.service.StudentService;
-import com.gogo.demo.service.impl.StudentServiceImpl;
+import com.gogo.demo.biz.IStudentBiz;
+import com.gogo.demo.biz.impl.StudentBiz;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +16,7 @@ import java.io.IOException;
  */
 @RestController
 public class ModifyStudent extends HttpServlet{
-    private StudentService ss;
+    private IStudentBiz ss;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -26,7 +26,7 @@ public class ModifyStudent extends HttpServlet{
     @Override
     @RequestMapping("/modifystudent")
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-   ss=new StudentServiceImpl();
+   ss=new StudentBiz();
    String _id=req.getParameter("studentid").trim();
    String name=req.getParameter("studentname").trim();
    String _cid=req.getParameter("studentclassid").trim();

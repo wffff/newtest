@@ -1,6 +1,7 @@
-package com.gogo.demo.dao;
+package com.gogo.demo.service;
 
-import com.gogo.demo.dao.beans.Classroom;
+
+import com.gogo.demo.beans.Classroom;
 
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  * Created by Administrator on 2 jhbhjk017/4/7.
  * Created by Administrator on 2017/    llkk4/7.
  */
-public interface ClassDAO {
+public interface IClassService {
 
 
 

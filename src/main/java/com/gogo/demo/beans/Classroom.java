@@ -1,4 +1,4 @@
-package com.gogo.demo.dao.beans;
+package com.gogo.demo.beans;
 
 /**
  * Created by Administrator on 2017/4/7.

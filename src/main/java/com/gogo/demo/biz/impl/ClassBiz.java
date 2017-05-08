@@ -1,27 +1,26 @@
-package com.gogo.demo.service.impl;
+package com.gogo.demo.biz.impl;
 
-import com.gogo.demo.dao.ClassDAO;
-import com.gogo.demo.dao.beans.Classroom;
-import com.gogo.demo.dao.impl.ClassDAOImpl;
-import com.gogo.demo.dao.impl.StudentDAOImpl;
-import com.gogo.demo.service.ClassService;
+import com.gogo.demo.beans.Classroom;
+import com.gogo.demo.biz.IClassBiz;
+import com.gogo.demo.service.IClassService;
+import com.gogo.demo.service.impl.ClassService;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/4/7.
  */
-public class ClassServiceImpl implements ClassService{
-private ClassDAO dao;
+public class ClassBiz implements IClassBiz {
+private IClassService dao;
     @Override
     public List<Classroom> findall() {
-        dao=new ClassDAOImpl();
+        dao=new ClassService();
         return dao.findall();
     }
 
     @Override
     public boolean addClass(int id, String classname) {
-        dao=new ClassDAOImpl();
+        dao=new ClassService();
         if(findByID(id).getClassname()!=null){
             return false;
         }
@@ -31,13 +30,13 @@ private ClassDAO dao;
 
     @Override
     public Classroom findByID(int id) {
-        dao=new ClassDAOImpl();
+        dao=new ClassService();
         return dao.findByID(id);
     }
 
     @Override
     public boolean modifyClass(int id, String classname) {
-        dao=new ClassDAOImpl();
+        dao=new ClassService();
         if(findByID(id).getClassname()==null){
             return false;
         }
@@ -51,7 +50,7 @@ private ClassDAO dao;
 
     @Override
     public boolean deleteClassByID(int id) {
-        dao=new ClassDAOImpl();
+        dao=new ClassService();
         if(findByID(id).getClassname()==null){
             return false;
         }

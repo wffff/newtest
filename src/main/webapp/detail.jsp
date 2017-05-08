@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.gogo.demo.dao.beans.Student" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.gogo.demo.beans.Student" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2017/4/6

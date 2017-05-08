@@ -1,13 +1,14 @@
-package com.gogo.demo.dao;
+package com.gogo.demo.service;
 
-import com.gogo.demo.dao.beans.Student;
+
+import com.gogo.demo.beans.Student;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/4/7.
  */
-public interface StudentDAO {
+public interface IStudentService {
     public List<Student> findAll();
 
    public  Student findByID(int id);

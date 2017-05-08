@@ -1,8 +1,8 @@
 package com.gogo.demo.controller;
 
-import com.gogo.demo.dao.beans.Student;
-import com.gogo.demo.service.StudentService;
-import com.gogo.demo.service.impl.StudentServiceImpl;
+import com.gogo.demo.beans.Student;
+import com.gogo.demo.biz.IStudentBiz;
+import com.gogo.demo.biz.impl.StudentBiz;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,12 +18,12 @@ import java.util.List;
  */
 @RestController
 public class DemoController  extends HttpServlet {
-    private StudentService ss;
+    private IStudentBiz ss;
 
     @Override
     @RequestMapping("/showstudent")
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ss=new StudentServiceImpl();
+        ss=new StudentBiz();
         List<Student> list= ss.findAll();
         req.getSession().setAttribute("student",list);
         req.getRequestDispatcher("/detail.jsp").forward(req,resp);

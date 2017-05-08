@@ -1,27 +1,27 @@
-package com.gogo.demo.service.impl;
+package com.gogo.demo.biz.impl;
 
-import com.gogo.demo.dao.StudentDAO;
-import com.gogo.demo.dao.impl.StudentDAOImpl;
-import com.gogo.demo.service.StudentService;
-import com.gogo.demo.dao.beans.Student;
+import com.gogo.demo.beans.Student;
+import com.gogo.demo.biz.IStudentBiz;
+import com.gogo.demo.service.IStudentService;
+import com.gogo.demo.service.impl.StudentService;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/4/7.
  */
-public class StudentServiceImpl implements StudentService{
-    private StudentDAO sd;
+public class StudentBiz implements IStudentBiz {
+    private IStudentService sd;
     @Override
     public List<Student> findAll() {
-        sd=new StudentDAOImpl();
+        sd=new StudentService();
         return sd.findAll();
     }
 
 
     @Override
     public boolean addStudent(int id, String name, int cid) {
-        sd=new StudentDAOImpl();
+        sd=new StudentService();
         if(findByID(id).getName()!=null){
             return false;
         }
@@ -31,13 +31,13 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public Student findByID(int id) {
-        sd=new StudentDAOImpl();
+        sd=new StudentService();
         return sd.findByID(id);
     }
 
     @Override
     public boolean modifyStudent(int id, String name, int cid) {
-        sd=new StudentDAOImpl();
+        sd=new StudentService();
         if(findByID(id).getName()==null){
             return false;
         }
@@ -51,7 +51,7 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public boolean deleteStudent(int id) {
-        sd=new StudentDAOImpl();
+        sd=new StudentService();
         if(findByID(id).getName()==null){
             return false;
         }

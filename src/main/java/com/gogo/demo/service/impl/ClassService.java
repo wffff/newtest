@@ -1,11 +1,9 @@
-package com.gogo.demo.dao.impl;
+package com.gogo.demo.service.impl;
 
+import com.gogo.demo.beans.Classroom;
 import com.gogo.demo.common.DBUtils;
 import com.gogo.demo.common.JDBCOperation;
-import com.gogo.demo.dao.ClassDAO;
-import com.gogo.demo.dao.beans.Classroom;
-import com.gogo.demo.dao.beans.Student;
-
+import com.gogo.demo.service.IClassService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +14,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/4/7.
  */
-public class ClassDAOImpl implements ClassDAO {
+public class ClassService implements IClassService {
     Connection conn = null;
     PreparedStatement pre = null;
     ResultSet rs = null;
